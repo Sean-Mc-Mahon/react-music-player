@@ -17,23 +17,8 @@ const Player = ({
   songs,
   setCurrentSong,
   setSongs,
+  activeLibraryHandler,
 }) => {
-  const activeLibraryHandler = (nextPrev) => {
-    const newSongs = songs.map((song) => {
-      if (song.id === nextPrev.id) {
-        return {
-          ...song,
-          active: true,
-        };
-      } else {
-        return {
-          ...song,
-          active: false,
-        };
-      }
-    });
-    setSongs(newSongs);
-  };
   //Event Handlers
   const playSongHandler = () => {
     if (isPlaying) {
